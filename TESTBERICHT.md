@@ -65,3 +65,31 @@ Die zwölf [Vorschaubilder](preview/README.md) wurden aus den echten Browseransi
 Nicht geprüft sind echte Kunden-API-Zugangsdaten, nicht verfügbare historische Plugin-Pakete, alle denkbaren Themes/Plugins, mobile Safari/Firefox und jede mögliche API-Antwortform. Ein vollständiger Netzwerkausfall folgt der vorhandenen Fehlerbehandlung des Plugin-Controllers; reine HTML-Templates ergänzen daran keinen neuen Fehler-Callback. Änderungen am Plugin selbst wurden nicht vorgenommen.
 
 Die maschinenlesbaren Ergebnisse stehen in [tests/results.json](tests/results.json) und [tests/extended-results.json](tests/extended-results.json). Anleitung zum Wiederholen: [tests/README.md](tests/README.md).
+
+## TYPO3-Controller-Tests
+
+Prüfdatum **27. November 2026**. Alle sechs Templates wurden zusätzlich mit den unveränderten JavaScript-Dateien der drei TYPO3-Extension-Stände im Chromium-basierten Edge geprüft.
+
+| Zielvariante | Extension | Git-Commit | Listing und Detail aller drei Gestaltungen |
+| --- | --- | --- | --- |
+| TYPO3 6–8 | 1.0.8 | `f433b4e2b5d1e5d5243da60824b924dda52938a0` | bestanden |
+| TYPO3 9–13 | 2.0.3 | `b1ffdfeefccac3948b4f8ec74508a24fc9fc15c5` | bestanden |
+| TYPO3 14 | 3.0.1 | `c8995d4b1337ecff1fea6b19aaa45a16a7822e79` | bestanden |
+
+Die vollständigen Commit-IDs und SHA-256-Werte der tatsächlich geladenen Dateien stehen in [tests/typo3-results.json](tests/typo3-results.json). Im Repository 9–13 wurde nach dem Release außerdem die README ergänzt. Der Commit für diesen Test wird deshalb aus dem ausgecheckten Stand in der Ergebnisdatei übernommen.
+
+Insgesamt wurden **18 Template-/Extension-Kombinationen** geprüft. Jede Kombination umfasst vier Auswahlfilter samt API-Parametern, Suche, Zurücksetzen, Paginierung, Datumsauswahl, gruppierte Termine, Filter links/rechts/ausgeblendet und Inline-Kalender. Detaillinks müssen Veranstaltungs-ID und numerische TYPO3-Herkunftsseiten-UID übergeben. Beschreibung, Rücklink, Lade-/Leerzustände, fehlende optionale Felder und Detailbild wurden ebenfalls geprüft.
+
+Die Breiten 320, 390, 768 und 1280 Pixel verursachten keinen horizontalen Überlauf. Die automatischen axe-Prüfungen der Listing- und Detailbereiche meldeten keine Verstöße gegen die verfügbaren WCAG-A/AA-Regeln. Im regulären Template-Test traten keine JavaScript-Ausnahmen oder Konsolenfehler auf.
+
+Die Tests laufen in einem lokalen HTML-Container mit der Konfiguration, die die TYPO3-Controller an AngularJS übergeben. Der Server lädt die originalen JavaScript-Controller und Bibliotheken aus den Extension-Verzeichnissen. PHP, TYPO3-Bootstrap, Backend-Speicherung und FAL-Verarbeitung werden nicht ausgeführt. Die Zuordnung zu TYPO3-Versionen beschreibt den jeweiligen Extension-Zweig. Jede einzelne TYPO3-/PHP-Version ist damit nicht als vollständig integriert getestet ausgewiesen.
+
+### Native Modals
+
+Das native Modal funktioniert im Test mit Extension **1.0.8 und 2.0.3**. Der Controller von **3.0.1** fordert hingegen `/typo3conf/ext/axist.axkirchenplaner/Resources/Public/Angular/Controller/kirchenPlanerModal.html` an. Der fest codierte Pfad passt nicht zu den ausgelieferten Asset-Pfaden. Der Testserver antwortet mit **404**. Der gleiche Aufruf wurde mit der unveränderten Standardvorlage der Extension reproduziert und separat vom Template-Ergebnis aufgezeichnet.
+
+### FAL-Befund in TYPO3 14
+
+Im PHP-Code von Extension **3.0.1** ist `Template Datei` als Referenz auf `sys_file_reference` konfiguriert. Der Controller lädt den gespeicherten Wert mit `ResourceFactory::getFileObject()` als `sys_file`-UID. Wenn diese UIDs auseinanderliegen, kann eine andere Datei ausgewählt werden oder die Auflösung fehlschlagen. Dieser Codebefund ist in der Installationsanleitung vermerkt. Er wurde in dieser Template-Prüfung nicht mit einem TYPO3-Backend reproduziert.
+
+Die Wiederholungsanleitung steht unter [TYPO3-Controller-Matrix](tests/README.md#typo3-controller-matrix).

@@ -1,0 +1,17 @@
+[
+    {
+        "label": "TYPO3 6–8",
+        "root": "/path/to/axkirchenplaner-typo3-6-8",
+        "version": "1.0.8"
+    },
+    {
+        "label": "TYPO3 9–13",
+        "root": "/path/to/axkirchenplaner-typo3-9-13",
+        "version": "2.0.3"
+    },
+    {
+        "label": "TYPO3 14",
+        "root": "/path/to/axkirchenplaner_typo3",
+        "version": "3.0.1"
+    }
+]

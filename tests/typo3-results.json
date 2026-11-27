@@ -1,0 +1,284 @@
+{
+  "scope": "Real extension JavaScript controllers and assets in a local HTML harness; TYPO3 PHP bootstrap and FAL are not executed",
+  "browser": "158.0.4370.33",
+  "node": "v24.22.3",
+  "extensions": [
+    {
+      "extension": "TYPO3 6–8",
+      "version": "1.0.8",
+      "commit": "f433b4e2b5d1e5d5243da60824b924dda52938a0",
+      "files": {
+        "Resources/Public/Angular/libs/angular.min.js": "e92af41ea36051ffe9f3c83abec97cec2ac09cdaa2396863958e8b4bc8de5870",
+        "Resources/Public/Angular/libs/angular-locale_de-de.js": "f26bee7836e403ae7936a5c5cabbaa982be28cbd636a1ec454d9adcff1ba5e94",
+        "Resources/Public/Angular/libs/angular-ui-bootstrap.min.js": "bbacff389bb8f2041b00390cfa7531185877b1f01a5949c76d80daa2a157a361",
+        "Resources/Public/Angular/libs/angular-filter.min.js": "b0662fb92cba5811a35fd71d0be6f327f1d1ced61a4f99e3671a47578981d35d",
+        "Resources/Public/Angular/libs/angular-animate.min.js": "6a16a8d5bdaeff9367cd62bd34ac6d1a45c38278772e2825f9df24639b4b0f13",
+        "Resources/Public/Angular/libs/angular-scroll.min.js": "c2052265e627d22059910439396d0f5ae770381d0d6bf9de7388f525ab3da313",
+        "Resources/Public/Angular/libs/underscore.min.js": "a1b6400a21ddee090e93d8882ffa629963132785bfa41b0abbea199d278121e9",
+        "Resources/Public/Angular/app.js": "899bf7a9e27a8827cc15eab1f91d26686912e30ef7d7e9a28d4688fe3314b46c",
+        "Resources/Public/Angular/Controller/kirchenPlaner.js": "1fe22f5cab7c2b0cf65f460e31edca1183bf52e2617b25c749302888062f86c5",
+        "Resources/Public/Angular/Controller/kirchenPlanerModal.js": "0839c77be8ea47a001d3dda49f28702d946f50325d94cc437411297db2b0339a"
+      },
+      "checks": [
+        {
+          "template": "licht",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "horizont",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "mosaik",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        }
+      ],
+      "native_modal": {
+        "status": "passed"
+      }
+    },
+    {
+      "extension": "TYPO3 9–13",
+      "version": "2.0.3",
+      "commit": "b1ffdfeefccac3948b4f8ec74508a24fc9fc15c5",
+      "files": {
+        "Resources/Public/Angular/libs/angular.min.js": "e92af41ea36051ffe9f3c83abec97cec2ac09cdaa2396863958e8b4bc8de5870",
+        "Resources/Public/Angular/libs/angular-locale_de-de.js": "f26bee7836e403ae7936a5c5cabbaa982be28cbd636a1ec454d9adcff1ba5e94",
+        "Resources/Public/Angular/libs/angular-ui-bootstrap.min.js": "bbacff389bb8f2041b00390cfa7531185877b1f01a5949c76d80daa2a157a361",
+        "Resources/Public/Angular/libs/angular-filter.min.js": "b0662fb92cba5811a35fd71d0be6f327f1d1ced61a4f99e3671a47578981d35d",
+        "Resources/Public/Angular/libs/angular-animate.min.js": "6a16a8d5bdaeff9367cd62bd34ac6d1a45c38278772e2825f9df24639b4b0f13",
+        "Resources/Public/Angular/libs/angular-scroll.min.js": "c2052265e627d22059910439396d0f5ae770381d0d6bf9de7388f525ab3da313",
+        "Resources/Public/Angular/libs/underscore.min.js": "a1b6400a21ddee090e93d8882ffa629963132785bfa41b0abbea199d278121e9",
+        "Resources/Public/Angular/app.js": "899bf7a9e27a8827cc15eab1f91d26686912e30ef7d7e9a28d4688fe3314b46c",
+        "Resources/Public/Angular/Controller/kirchenPlaner.js": "7967a24fafcfd6a0f37e811f5bd8b7d625e8502f508db05c065cb9a9724c1506",
+        "Resources/Public/Angular/Controller/kirchenPlanerModal.js": "0839c77be8ea47a001d3dda49f28702d946f50325d94cc437411297db2b0339a"
+      },
+      "checks": [
+        {
+          "template": "licht",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "horizont",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "mosaik",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        }
+      ],
+      "native_modal": {
+        "status": "passed"
+      }
+    },
+    {
+      "extension": "TYPO3 14",
+      "version": "3.0.1",
+      "commit": "c8995d4b1337ecff1fea6b19aaa45a16a7822e79",
+      "files": {
+        "Resources/Public/Angular/libs/angular.min.js": "e92af41ea36051ffe9f3c83abec97cec2ac09cdaa2396863958e8b4bc8de5870",
+        "Resources/Public/Angular/libs/angular-locale_de-de.js": "f26bee7836e403ae7936a5c5cabbaa982be28cbd636a1ec454d9adcff1ba5e94",
+        "Resources/Public/Angular/libs/angular-ui-bootstrap.min.js": "bbacff389bb8f2041b00390cfa7531185877b1f01a5949c76d80daa2a157a361",
+        "Resources/Public/Angular/libs/angular-filter.min.js": "b0662fb92cba5811a35fd71d0be6f327f1d1ced61a4f99e3671a47578981d35d",
+        "Resources/Public/Angular/libs/angular-animate.min.js": "6a16a8d5bdaeff9367cd62bd34ac6d1a45c38278772e2825f9df24639b4b0f13",
+        "Resources/Public/Angular/libs/angular-scroll.min.js": "c2052265e627d22059910439396d0f5ae770381d0d6bf9de7388f525ab3da313",
+        "Resources/Public/Angular/libs/underscore.min.js": "a1b6400a21ddee090e93d8882ffa629963132785bfa41b0abbea199d278121e9",
+        "Resources/Public/Angular/app.js": "899bf7a9e27a8827cc15eab1f91d26686912e30ef7d7e9a28d4688fe3314b46c",
+        "Resources/Public/Angular/Controller/kirchenPlaner.js": "6f408233982e286b7110e5d5ac73d5a3752dc8d8ced80484b79ce13657af328e",
+        "Resources/Public/Angular/Controller/kirchenPlanerModal.js": "0839c77be8ea47a001d3dda49f28702d946f50325d94cc437411297db2b0339a"
+      },
+      "checks": [
+        {
+          "template": "licht",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "horizont",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "mosaik",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        }
+      ],
+      "native_modal": {
+        "status": "blocked",
+        "upstream": true,
+        "requested_path": "//typo3conf/ext/axist.axkirchenplaner/Resources/Public/Angular/Controller/kirchenPlanerModal.html",
+        "http_status": 404,
+        "standard_template_confirmed": true
+      }
+    }
+  ]
+}
