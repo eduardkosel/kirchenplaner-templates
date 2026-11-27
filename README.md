@@ -36,7 +36,7 @@ Lavendel, Salbei und warme Sandtöne treffen auf ein lebendiges Kartenlayout. F�
 
 ## Gottesdienste
 
-Kalenderblätter, gut sichtbare Uhrzeiten und ruhige Karten in Petrol und warmen Naturtönen. Sonntage erhalten einen goldbraunen Kalenderkopf. Inspiriert von der [Gottesdienstübersicht der Pfarrei Heilig Geist Neustadt](https://www.pfarrei-nw-heilig-geist.de/gottesdienste/), mit eigener Gestaltung und passender Detailseite.
+Kalenderblätter, gut sichtbare Uhrzeiten und ruhige Karten in Petrol und warmen Naturtönen. Sonntage erhalten einen goldbraunen Kalenderkopf. Eine passende Detailseite ergänzt die Terminübersicht.
 
 | Terminliste | Detailseite |
 | --- | --- |
@@ -46,7 +46,7 @@ Kalenderblätter, gut sichtbare Uhrzeiten und ruhige Karten in Petrol und warmen
 
 Die Karten stehen bei ausreichender Breite nebeneinander, mobil untereinander. Datumsgruppierung, Filter, Kalender und Seitenwechsel folgen den Plugin-Einstellungen. Eine Druckansicht blendet Filter und Navigation aus. Keine Extension-Änderung und keine zusätzliche CSS-Datei nötig.
 
-Feiertagshinweise stammen aus der vorhandenen Kirchenplaner-API. Die jahresbezogenen Direktoriumstexte, Lesungen und Bibelworte der Referenzseite sind nicht enthalten. Einträge um 00:00 Uhr werden nicht automatisch als Bibelwort umgedeutet oder ausgeblendet. Das Template filtert nicht automatisch auf Gottesdienste: Die gewünschten Kategorien werden im Plugin ausgewählt.
+Feiertagshinweise stammen aus der vorhandenen Kirchenplaner-API. Zusätzliche Direktoriumstexte, Lesungen und Bibelworte sind nicht enthalten. Einträge um 00:00 Uhr werden nicht automatisch als Bibelwort umgedeutet oder ausgeblendet. Das Template filtert nicht automatisch auf Gottesdienste: Die gewünschten Kategorien werden im Plugin ausgewählt.
 
 Die neue Variante ist direkt im Repository verfügbar. Ein älteres Release-ZIP enthält sie möglicherweise noch nicht; dann die beiden verlinkten HTML-Dateien als **Raw-Dateien** herunterladen.
 
