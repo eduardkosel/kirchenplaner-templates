@@ -1,0 +1,13 @@
+{
+  "checked_on": "2026-11-27",
+  "repository": "https://github.com/eduardkosel/axkirchenplaner_wordpress",
+  "available_tags": [
+    "v1.0.4"
+  ],
+  "tested_versions": [
+    "1.0.4"
+  ],
+  "plugin_commit": "5022370ac82a6fc151fc514939d2f4de480c972f",
+  "source_php_js_files_verified_per_installation": 303,
+  "unavailable_historical_versions_tested": false
+}

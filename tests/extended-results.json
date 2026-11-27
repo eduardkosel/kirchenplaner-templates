@@ -1,0 +1,83 @@
+{
+  "browser": "158.0.4370.33",
+  "node": "v24.22.3",
+  "checks": [
+    {
+      "template": "licht",
+      "checks": [
+        "left and right sidebar",
+        "hidden filters",
+        "three calendar modes",
+        "four pagination modes",
+        "Bootstrap 3 and 4 (upstream Tether issue recorded)",
+        "native plugin modal",
+        "standard WordPress theme listing and detail",
+        "community audience location filters",
+        "loading",
+        "empty listing and detail",
+        "long titles at 320 390 768 1280px",
+        "missing metadata",
+        "detail image",
+        "axe WCAG A/AA listing and detail"
+      ]
+    },
+    {
+      "template": "horizont",
+      "checks": [
+        "left and right sidebar",
+        "hidden filters",
+        "three calendar modes",
+        "four pagination modes",
+        "Bootstrap 3 and 4 (upstream Tether issue recorded)",
+        "native plugin modal",
+        "standard WordPress theme listing and detail",
+        "community audience location filters",
+        "loading",
+        "empty listing and detail",
+        "long titles at 320 390 768 1280px",
+        "missing metadata",
+        "detail image",
+        "axe WCAG A/AA listing and detail"
+      ]
+    },
+    {
+      "template": "mosaik",
+      "checks": [
+        "left and right sidebar",
+        "hidden filters",
+        "three calendar modes",
+        "four pagination modes",
+        "Bootstrap 3 and 4 (upstream Tether issue recorded)",
+        "native plugin modal",
+        "standard WordPress theme listing and detail",
+        "community audience location filters",
+        "loading",
+        "empty listing and detail",
+        "long titles at 320 390 768 1280px",
+        "missing metadata",
+        "detail image",
+        "axe WCAG A/AA listing and detail"
+      ]
+    }
+  ],
+  "javascript_errors": [],
+  "known_plugin_errors": [
+    {
+      "phase": "bootstrap4",
+      "message": "Bootstrap tooltips require Tether (http://tether.io/)"
+    },
+    {
+      "phase": "bootstrap4",
+      "message": "Bootstrap tooltips require Tether (http://tether.io/)"
+    },
+    {
+      "phase": "bootstrap4",
+      "message": "Bootstrap tooltips require Tether (http://tether.io/)"
+    },
+    {
+      "phase": "baselineBootstrap4",
+      "message": "Bootstrap tooltips require Tether (http://tether.io/)"
+    }
+  ],
+  "baseline_confirmed": true
+}
