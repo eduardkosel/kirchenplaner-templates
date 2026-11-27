@@ -1,6 +1,6 @@
 {
   "scope": "Real extension JavaScript controllers and assets in a local HTML harness; TYPO3 PHP bootstrap and FAL are not executed",
-  "browser": "158.0.4370.33",
+  "browser": "158.0.8127.88",
   "node": "v24.22.3",
   "extensions": [
     {
@@ -68,6 +68,29 @@
         },
         {
           "template": "mosaik",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "gottesdienste",
           "views": [
             "listing",
             "detail"
@@ -179,6 +202,29 @@
           ],
           "status": "passed",
           "javascript_errors": []
+        },
+        {
+          "template": "gottesdienste",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
         }
       ],
       "native_modal": {
@@ -250,6 +296,29 @@
         },
         {
           "template": "mosaik",
+          "views": [
+            "listing",
+            "detail"
+          ],
+          "checks": [
+            "four filters and request parameters",
+            "search and reset",
+            "pagination",
+            "datepicker",
+            "numeric TYPO3 page IDs in detail navigation and backlink",
+            "left/right/hidden filters",
+            "grouping",
+            "inline calendar",
+            "loading/empty states",
+            "optional fields and image",
+            "320/390/768/1280px without overflow",
+            "axe WCAG A/AA listing and detail"
+          ],
+          "status": "passed",
+          "javascript_errors": []
+        },
+        {
+          "template": "gottesdienste",
           "views": [
             "listing",
             "detail"

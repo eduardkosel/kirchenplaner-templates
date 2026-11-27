@@ -1,6 +1,14 @@
 # Testbericht – Kirchenplaner Templates 1.0.0
 
-Prüfdatum: **27. November 2026**. Drei Varianten mit jeweils Listing und Detailseite; insgesamt sechs eigenständige HTML-Templates.
+Prüfdatum: **27. November 2026**. Ursprünglich drei Varianten mit jeweils Listing und Detailseite; ergänzt um „Gottesdienste“, insgesamt acht eigenständige HTML-Templates.
+
+## Ergänzung: Gottesdienste
+
+Die vierte Variante enthält eigenständige Listen- und Detailvorlagen mit eingebettetem CSS. Keine Änderungen an den Extensions oder ihren Controllern sind erforderlich. Vier neue Vorschaubilder zeigen die gerenderten Vorlagen bei 1280 und 390 Pixel Browserbreite.
+
+Die TYPO3-Controller-Matrix wurde für **alle vier Varianten** erneut ausgeführt: **24 Template-/Extension-Kombinationen** mit 1.0.8, 2.0.3 und 3.0.1. Alle Prüfungen bestanden, einschließlich Filterparameter, Suche, Zurücksetzen, Paginierung, Kalenderarten, Gruppierung, Detailnavigation/Rücklink, fehlenden Feldern, Lade-/Leerzuständen, Überlaufprüfung bei 320/390/768/1280 Pixel und automatischen WCAG-A/AA-Regeln. Ergebnisse: [typo3-results.json](tests/typo3-results.json).
+
+Die nachfolgende WordPress-/PHP-Matrix und deren historische Ergebnisse gelten weiterhin nur für Licht, Horizont und Mosaik. Für Gottesdienste wurde kein vollständiger CMS-/PHP-Test durchgeführt. Die TYPO3-Matrix führt echte JavaScript-Controller aus, aber keinen TYPO3-PHP-Bootstrap, kein Backend und keine FAL-Auflösung. Der bekannte native Modalfehler in TYPO3 14 bleibt unverändert; eine separate Detailseite wird empfohlen. Fehlerbehandlung bei API-Ausfall liegt weiterhin im jeweiligen Plugin-Controller.
 
 ## Verfügbare Plugin-Versionen
 
@@ -68,9 +76,9 @@ Die maschinenlesbaren Ergebnisse stehen in [tests/results.json](tests/results.js
 
 ## TYPO3-Controller-Tests
 
-Prüfdatum **27. November 2026**. Alle sechs Templates wurden zusätzlich mit den unveränderten JavaScript-Dateien der drei TYPO3-Extension-Stände im Chromium-basierten Edge geprüft.
+Prüfdatum **27. November 2026**. Alle acht Templates wurden mit den unveränderten JavaScript-Dateien der drei TYPO3-Extension-Stände in Chromium/Chrome geprüft. Die genaue Browser- und Node-Version steht in der Ergebnisdatei.
 
-| Zielvariante | Extension | Git-Commit | Listing und Detail aller drei Gestaltungen |
+| Zielvariante | Extension | Git-Commit | Listing und Detail aller vier Gestaltungen |
 | --- | --- | --- | --- |
 | TYPO3 6–8 | 1.0.8 | `f433b4e2b5d1e5d5243da60824b924dda52938a0` | bestanden |
 | TYPO3 9–13 | 2.0.3 | `b1ffdfeefccac3948b4f8ec74508a24fc9fc15c5` | bestanden |
@@ -78,7 +86,7 @@ Prüfdatum **27. November 2026**. Alle sechs Templates wurden zusätzlich mit de
 
 Die vollständigen Commit-IDs und SHA-256-Werte der tatsächlich geladenen Dateien stehen in [tests/typo3-results.json](tests/typo3-results.json). Im Repository 9–13 wurde nach dem Release außerdem die README ergänzt. Der Commit für diesen Test wird deshalb aus dem ausgecheckten Stand in der Ergebnisdatei übernommen.
 
-Insgesamt wurden **18 Template-/Extension-Kombinationen** geprüft. Jede Kombination umfasst vier Auswahlfilter samt API-Parametern, Suche, Zurücksetzen, Paginierung, Datumsauswahl, gruppierte Termine, Filter links/rechts/ausgeblendet und Inline-Kalender. Detaillinks müssen Veranstaltungs-ID und numerische TYPO3-Herkunftsseiten-UID übergeben. Beschreibung, Rücklink, Lade-/Leerzustände, fehlende optionale Felder und Detailbild wurden ebenfalls geprüft.
+Insgesamt wurden **24 Template-/Extension-Kombinationen** geprüft. Jede Kombination umfasst vier Auswahlfilter samt API-Parametern, Suche, Zurücksetzen, Paginierung, Datumsauswahl, gruppierte Termine, Filter links/rechts/ausgeblendet und Inline-Kalender. Detaillinks müssen Veranstaltungs-ID und numerische TYPO3-Herkunftsseiten-UID übergeben. Beschreibung, Rücklink, Lade-/Leerzustände, fehlende optionale Felder und Detailbild wurden ebenfalls geprüft.
 
 Die Breiten 320, 390, 768 und 1280 Pixel verursachten keinen horizontalen Überlauf. Die automatischen axe-Prüfungen der Listing- und Detailbereiche meldeten keine Verstöße gegen die verfügbaren WCAG-A/AA-Regeln. Im regulären Template-Test traten keine JavaScript-Ausnahmen oder Konsolenfehler auf.
 

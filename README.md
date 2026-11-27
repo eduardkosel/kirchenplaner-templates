@@ -1,6 +1,6 @@
 # Kirchenplaner Templates
 
-Drei moderne Gestaltungen für den Kirchenplaner in **WordPress und TYPO3 6 bis 14**. Jede Variante enthält eine Terminliste und eine passende Detailseite. Die sechs HTML-Dateien enthalten ihr CSS bereits und benötigen weder zusätzliche Schriften noch Bootstrap.
+Vier moderne Gestaltungen für den Kirchenplaner in **WordPress und TYPO3 6 bis 14**. Jede Variante enthält eine Terminliste und eine passende Detailseite. Die acht HTML-Dateien enthalten ihr CSS bereits und benötigen weder zusätzliche Schriften noch Bootstrap. Die neue Variante „Gottesdienste“ wurde mit den drei TYPO3-Controllern getestet; die vollständige WordPress-/PHP-Matrix gilt bislang für Licht, Horizont und Mosaik.
 
 **[Alle Templates als ZIP herunterladen](https://github.com/eduardkosel/kirchenplaner-templates/releases/latest)** · [Testbericht](TESTBERICHT.md) · [Alle Desktop- und Smartphone-Vorschaubilder](preview/README.md)
 
@@ -34,9 +34,25 @@ Lavendel, Salbei und warme Sandtöne treffen auf ein lebendiges Kartenlayout. F�
 
 [Listing-Datei](templates/mosaik/listing.html) · [Detail-Datei](templates/mosaik/detail.html) · [Smartphone-Liste](preview/mosaik-listing-mobile.png) · [Smartphone-Detail](preview/mosaik-detail-mobile.png)
 
+## Gottesdienste
+
+Kalenderblätter, gut sichtbare Uhrzeiten und ruhige Karten in Petrol und warmen Naturtönen. Sonntage erhalten einen goldbraunen Kalenderkopf. Inspiriert von der [Gottesdienstübersicht der Pfarrei Heilig Geist Neustadt](https://www.pfarrei-nw-heilig-geist.de/gottesdienste/), mit eigener Gestaltung und passender Detailseite.
+
+| Terminliste | Detailseite |
+| --- | --- |
+| [![Gottesdienste – Terminliste](preview/gottesdienste-listing.png)](preview/gottesdienste-listing.png) | [![Gottesdienste – Detailseite](preview/gottesdienste-detail.png)](preview/gottesdienste-detail.png) |
+
+[Listing-Datei](templates/gottesdienste/listing.html) · [Detail-Datei](templates/gottesdienste/detail.html) · [Smartphone-Liste](preview/gottesdienste-listing-mobile.png) · [Smartphone-Detail](preview/gottesdienste-detail-mobile.png)
+
+Die Karten stehen bei ausreichender Breite nebeneinander, mobil untereinander. Datumsgruppierung, Filter, Kalender und Seitenwechsel folgen den Plugin-Einstellungen. Eine Druckansicht blendet Filter und Navigation aus. Keine Extension-Änderung und keine zusätzliche CSS-Datei nötig.
+
+Feiertagshinweise stammen aus der vorhandenen Kirchenplaner-API. Die jahresbezogenen Direktoriumstexte, Lesungen und Bibelworte der Referenzseite sind nicht enthalten. Einträge um 00:00 Uhr werden nicht automatisch als Bibelwort umgedeutet oder ausgeblendet. Das Template filtert nicht automatisch auf Gottesdienste: Die gewünschten Kategorien werden im Plugin ausgewählt.
+
+Die neue Variante ist direkt im Repository verfügbar. Ein älteres Release-ZIP enthält sie möglicherweise noch nicht; dann die beiden verlinkten HTML-Dateien als **Raw-Dateien** herunterladen.
+
 ## In TYPO3 verwenden
 
-Für TYPO3 verwenden alle drei Gestaltungen dieselben sechs HTML-Dateien. Wähle die zu deiner TYPO3-Version passende Extension.
+Für TYPO3 und WordPress werden dieselben acht HTML-Dateien verwendet. Wähle die zu deiner TYPO3-Version passende Extension.
 
 | TYPO3 | Extension-Stand | Extension-Key | Quellcode und Installation |
 | --- | --- | --- | --- |
@@ -98,11 +114,11 @@ CSS-Regeln sind auf `.kpt` beschränkt. Die vorhandenen AngularJS-Bindings und C
 
 ## Kompatibilität und Tests
 
-Die TYPO3-Prüfung verwendet die unveränderten JavaScript-Controller und Bibliotheken aus **1.0.8, 2.0.3 und 3.0.1**. Alle sechs Templates bestehen damit **18 Template-/Extension-Kombinationen** im lokalen Browser-Test. Geprüft werden Filter und Anfrageparameter, Suche, Paginierung, Kalender, Detailnavigation mit TYPO3-Seiten-UIDs, Rücklinks, verschiedene Breiten, Lade-/Leerzustände und automatische WCAG-A/AA-Regeln.
+Die TYPO3-Prüfung verwendet die unveränderten JavaScript-Controller und Bibliotheken aus **1.0.8, 2.0.3 und 3.0.1**. Alle acht Templates bestehen damit **24 Template-/Extension-Kombinationen** im lokalen Browser-Test. Geprüft werden Filter und Anfrageparameter, Suche, Paginierung, Kalender, Detailnavigation mit TYPO3-Seiten-UIDs, Rücklinks, verschiedene Breiten, Lade-/Leerzustände und automatische WCAG-A/AA-Regeln.
 
 Der Test stellt TYPO3s HTML-Container und Konfiguration in einem lokalen Testserver bereit. PHP, der TYPO3-Bootstrap, Speicherung im Backend und die FAL-Dateiauswahl werden dabei nicht ausgeführt. Die Ergebnisse belegen die Template-/Controller-Kompatibilität der drei Extension-Stände. Ein zusätzlicher Test in der konkreten TYPO3-Website prüft deren Einrichtung und Dateiauswahl.
 
-Am 27. November 2026 war im WordPress-Plugin-Repository ausschließlich **v1.0.4** als Release/Tag verfügbar. Alle sechs Templates wurden mit dieser Version in echten lokalen WordPress-Installationen über **elf PHP-Zweige von 7.0 bis 8.5** getestet. Ältere, nicht verfügbare Plugin-Pakete sind damit nicht als getestet ausgewiesen.
+Am 27. November 2026 war im WordPress-Plugin-Repository ausschließlich **v1.0.4** als Release/Tag verfügbar. Die ursprünglichen sechs Templates (Licht, Horizont, Mosaik) wurden mit dieser Version in echten lokalen WordPress-Installationen über **elf PHP-Zweige von 7.0 bis 8.5** getestet. Diese WordPress-Matrix wurde für Gottesdienste noch nicht wiederholt. Ältere, nicht verfügbare Plugin-Pakete sind nicht als getestet ausgewiesen.
 
 Die Vorschaubilder stammen aus den tatsächlich gerenderten Templates mit festen Testterminen. Details, genaue Versionen, zusätzliche Browserprüfungen und Grenzen stehen im [Testbericht](TESTBERICHT.md). Die API-Tests verwenden lokale Testdaten. Die neuen TYPO3-Tests lassen sich mit `npm run test:typo3` wiederholen. [Testanleitung](tests/README.md#typo3-controller-matrix)
 

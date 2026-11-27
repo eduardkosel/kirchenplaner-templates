@@ -60,7 +60,7 @@ function startServer(extension) {
             }
             if (url.pathname === '/index.php' || url.pathname === '/') {
                 const slug = url.searchParams.get('variant') || 'licht';
-                assert(['licht', 'horizont', 'mosaik'].includes(slug));
+                assert(['licht', 'horizont', 'mosaik', 'gottesdienste'].includes(slug));
                 const pageId = Number(url.searchParams.get('id') || 1);
                 const config = configuration(base, slug, pageId, url.searchParams);
                 if (url.searchParams.has('baseline')) {
@@ -160,6 +160,13 @@ async function checkVariant(browser, slug, base) {
         await ready();
         await clean();
         assert.equal(await page.locator('.kpt-filters select').count(), 4);
+        if (process.env.KP_SCREENSHOTS && slug === 'gottesdienste') {
+            for (const width of [1280, 390]) {
+                await page.setViewportSize({ width, height: 1000 });
+                await page.locator('.kpt').screenshot({ path: path.join(repo, 'preview', slug + '-listing' + (width === 390 ? '-mobile' : '') + '.png') });
+            }
+            await page.setViewportSize({ width: 1280, height: 1000 });
+        }
         assert(await page.locator('.kpt-pagination-bottom button').first().isDisabled());
         await page.locator('.kpt-pagination-bottom button').last().click();
         await page.getByRole('heading', { name: 'Zeit für einen guten Gedanken', exact: true }).waitFor();
@@ -200,6 +207,13 @@ async function checkVariant(browser, slug, base) {
         }
         const detailAudit = await new AxeBuilder({ page }).include('.kpt').withTags(['wcag2a', 'wcag2aa']).analyze();
         assert.deepEqual(detailAudit.violations.map(violation => violation.id), []);
+        if (process.env.KP_SCREENSHOTS && slug === 'gottesdienste') {
+            for (const width of [1280, 390]) {
+                await page.setViewportSize({ width, height: 1000 });
+                await page.locator('.kpt').screenshot({ path: path.join(repo, 'preview', slug + '-detail' + (width === 390 ? '-mobile' : '') + '.png') });
+            }
+            await page.setViewportSize({ width: 1280, height: 1000 });
+        }
         for (const options of [
             '&layout=links&calendar=start&group=ja&pagination=oben',
             '&layout=rechts&calendar=kalender&pagination=obenunten',
@@ -302,7 +316,7 @@ async function main() {
                 await once(server, 'listening');
                 const base = 'http://127.0.0.1:' + server.address().port;
                 const checks = [];
-                for (const slug of ['licht', 'horizont', 'mosaik']) {
+                for (const slug of ['licht', 'horizont', 'mosaik', 'gottesdienste']) {
                     checks.push(await checkVariant(browser, slug, base));
                     console.log(extension.label + ' / ' + slug + ' passed');
                 }

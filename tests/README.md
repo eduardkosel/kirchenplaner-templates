@@ -74,12 +74,14 @@ Bash
 KP_TYPO3_CONFIG="$PWD/typo3.local.json" npm run test:typo3
 ```
 
-Optional kann `KP_BROWSER` auf eine vorhandene Chromium-/Edge-Datei zeigen. Ohne diese Variable wird Playwrights installiertes Chromium verwendet.
+Optional kann `KP_BROWSER` auf eine vorhandene Chromium-/Edge-Datei zeigen. Ohne diese Variable wird Playwrights installiertes Chromium verwendet. Mit `KP_SCREENSHOTS=1` erzeugt der Lauf außerdem die vier Gottesdienste-Vorschaubilder unter `preview/` aus den real gerenderten Listen- und Detailvorlagen.
 
-Der Test lädt die echten AngularJS-Controller und Bibliotheken direkt aus den angegebenen Extension-Ordnern. Die numerische Herkunftsseiten-UID in `p_id` und der Rücklink über `index.php?id=…` werden ausdrücklich geprüft. Die vier Filter müssen die vom Controller erwarteten Anfrageparameter senden. Alle drei Gestaltungen laufen mit allen drei Extension-Ständen.
+Der Test lädt die echten AngularJS-Controller und Bibliotheken direkt aus den angegebenen Extension-Ordnern. Die numerische Herkunftsseiten-UID in `p_id` und der Rücklink über `index.php?id=…` werden ausdrücklich geprüft. Die vier Filter müssen die vom Controller erwarteten Anfrageparameter senden. Alle vier Gestaltungen laufen mit allen drei Extension-Ständen.
+
+`node tests/build-gottesdienste.cjs` erzeugt die eigenständigen Gottesdienste-Dateien aus dem bewährten Licht-Markup und den eigenen Gestaltungsregeln. Danach die Controller-Matrix mit Vorschaubildern erneut ausführen. Die WordPress-Testskripte und deren vorhandene Ergebnisse umfassen weiterhin nur die ursprünglichen drei Varianten.
 
 Das Ergebnis enthält Versionsangabe, Git-Commit, SHA-256-Werte der geladenen JavaScript-Dateien und die einzelnen Prüfungen. Es wird erst nach einem vollständig erfolgreichen Lauf nach `tests/typo3-results.json` geschrieben. Ein fehlgeschlagener Lauf endet mit einem Fehlercode und lässt eine vorhandene Ergebnisdatei unverändert.
 
 Das native Modal wird zusätzlich geprüft. Für 1.0.8 und 2.0.3 muss es funktionieren. Für 3.0.1 wird der bekannte 404-Pfad erfasst und zusätzlich mit der unveränderten Standardvorlage reproduziert. Wenn ein neuer Extension-Stand diesen Befund behebt, sind Versionserwartung und Regressionstest entsprechend anzupassen.
 
-PHP und TYPO3s Backend-/FAL-Verarbeitung gehören nicht zu dieser Controller-Matrix. Für die abschließende Website-Prüfung richte die sechs HTML-Dateien nach der Haupt-README in einer eigenen TYPO3-Testinstallation ein. Prüfe für jede Gestaltung die gespeicherte Dateiauswahl nach erneutem Öffnen des Inhaltselements, die tatsächlich geladene `listing.html`, Detailnavigation, `detail.html` und Rücklink. Besonders bei TYPO3 14 ist der dokumentierte Unterschied zwischen Datei-UID und Referenz-UID zu beachten.
+PHP und TYPO3s Backend-/FAL-Verarbeitung gehören nicht zu dieser Controller-Matrix. Für die abschließende Website-Prüfung richte die acht HTML-Dateien nach der Haupt-README in einer eigenen TYPO3-Testinstallation ein. Prüfe für jede Gestaltung die gespeicherte Dateiauswahl nach erneutem Öffnen des Inhaltselements, die tatsächlich geladene `listing.html`, Detailnavigation, `detail.html` und Rücklink. Besonders bei TYPO3 14 ist der dokumentierte Unterschied zwischen Datei-UID und Referenz-UID zu beachten.
